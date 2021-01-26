@@ -1,4 +1,4 @@
-# Remote-infrared-thermometer System :computer:
+# Remote Infrared Face Thermometer Alertor :computer:
 Contactless infrared thermomter System for Covid-19 epidemic prevention and control. 
 ## About The Project
 ### Built with
