@@ -12,14 +12,14 @@ Contactless infrared thermomter System for Covid-19 epidemic prevention and cont
 ## Getting started
 ### Installation
 - **openCV-4.1.0**<br>
-1.update raspbian and Increase the swap-size
+1.update raspbian and Increase the swap-size<br>
 ```
    sudo apt-get update && sudo apt-get upgrade && sudo rpi-update
    sudo nano /etc/dphys-swapfile
    #CONF_SWAPSIZE=100
    CONF_SWAPSIZE=2048
 ```
-   2.Install tools and libraries for openCV
+2.Install tools and libraries for openCV
 ```
    sudo apt-get install build-essential cmake pkg-config
    sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
