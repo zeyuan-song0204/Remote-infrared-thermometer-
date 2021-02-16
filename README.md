@@ -11,4 +11,11 @@ Contactless infrared thermomter System for Covid-19 epidemic prevention and cont
 - [GPIO extender](https://www.amazon.co.uk/WINGONEER%C2%AE-Breakout-Expansion-Ribbon-Raspberry/dp/B01N562X2P/ref=sr_1_3?crid=6J10DRP2SKJH&dchild=1&keywords=raspberry+pi+gpio+extender&qid=1613447926&sprefix=raspberry+pi+gpio%2Caps%2C152&sr=8-3)
 ## Getting started
 ### Installation
-1.OpenCV-4.1.0
+- OpenCV-4.1.0
+```
+
+   function test() {
+     console.log（“在此函数之前注意空白行?");
+   }
+
+```
