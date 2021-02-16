@@ -1,5 +1,6 @@
 # Remote Infrared Face Thermometer Alertor :computer:
-Contactless infrared thermomter System for Covid-19 epidemic prevention and control.## About The Project
+Contactless infrared thermomter System for Covid-19 epidemic prevention and control.
+# About The Project
 ## Build with
 :running:Zeyuan Song(2605623s)<br>:running:Weinan Wang(2583409w)<br>:running:Yufei Liu(2572166l)
 ## Hardware
