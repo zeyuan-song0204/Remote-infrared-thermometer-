@@ -19,7 +19,7 @@ Contactless infrared thermomter System for Covid-19 epidemic prevention and cont
    #CONF_SWAPSIZE=100
    CONF_SWAPSIZE=2048
 ```
-   2.Install tools and libraries for openCV
+*   2.Install tools and libraries for openCV
 ```
    sudo apt-get install build-essential cmake pkg-config
    sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
