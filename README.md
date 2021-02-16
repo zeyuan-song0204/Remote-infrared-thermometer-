@@ -55,11 +55,11 @@ Contactless infrared thermomter System for Covid-19 epidemic prevention and cont
       make -j4
       sudo make install && sudo ldconfig
    ```
-- **Camera test**<br>
+- **Camera installation**<br>
+   Enable the Camera Interface
    ```
       sudo raspi-config
    ```
-   Enable the Camera Interface
    Test camera
    ```
       raspistill -o Desktop/image.jpg -w 500 -h 500
