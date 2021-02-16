@@ -15,7 +15,7 @@ int main()
         cout<<"camera getting failed"<<endl;
         return -1;
     }
-    //定义分类器
+    
     CascadeClassifier Classifier;
     Classifier.load(Path);
     if(!Classifier.load(Path))
