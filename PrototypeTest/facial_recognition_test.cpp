@@ -4,6 +4,8 @@ using namespace cv;
 using namespace std;
 
 string Path="/home/pi/test/haarcascade_frontalface_default.xml";
+//string Path="/home/pi/test/haarcascade_eye.xml";
+//string Path="/home/pi/test/haarcascade_eye_tree_eyeglasses.xml";
 
 int main()
 {
