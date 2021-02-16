@@ -11,11 +11,20 @@ Contactless infrared thermomter System for Covid-19 epidemic prevention and cont
 - [GPIO extender](https://www.amazon.co.uk/WINGONEER%C2%AE-Breakout-Expansion-Ribbon-Raspberry/dp/B01N562X2P/ref=sr_1_3?crid=6J10DRP2SKJH&dchild=1&keywords=raspberry+pi+gpio+extender&qid=1613447926&sprefix=raspberry+pi+gpio%2Caps%2C152&sr=8-3)
 ## Getting started
 ### Installation
-- OpenCV-4.1.0
+- openCV-4.1.0
+1.update raspbian and Increase the swap-size
 ```
-
-   function test() {
-     console.log（“在此函数之前注意空白行?");
-   }
-
+   sudo apt-get update && sudo apt-get upgrade && sudo rpi-update
+   sudo nano /etc/dphys-swapfile
+   #CONF_SWAPSIZE=100
+   CONF_SWAPSIZE=2048
+```
+2.Install tools and libraries for openCV
+```
+   sudo apt-get install build-essential cmake pkg-config
+   sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+   sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+   sudo apt-get install libxvidcore-dev libx264-dev
+   sudo apt-get install libgtk2.0-dev libgtk-3-dev
+   sudo apt-get install libatlas-base-dev gfortran
 ```
