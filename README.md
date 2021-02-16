@@ -3,4 +3,4 @@ Contactless infrared thermomter System for Covid-19 epidemic prevention and cont
 ## BUILT WITH
 :running:Zeyuan Song(2605623s)<br>:running:Weinan Wang(2583409w)<br>:running:Yufei Liu(2572166l)
 ## SETUP
--Raspberry Pi 4B Model with 4GB memory
+- Raspberry Pi 4B Model with 4GB memory
