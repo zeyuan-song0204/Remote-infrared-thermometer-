@@ -1,1 +1,4 @@
-
+project(facial_recognition_test)
+find_package(OpenCV REQUIRED)
+add_executable(facial_recognition_test facial_recognition_test)
+target_link_libraries(facial_recognition_test ${OpenCV_LIBS})
