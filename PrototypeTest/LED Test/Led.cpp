@@ -5,7 +5,7 @@
 #define GREEN 23
 int main(void){
     int t;
-    if(wiringPiSetup()==-1){//初始化
+    if(wiringPiSetup()==-1){
         printf("setup wiringPi failed!");
         return 1;
     }
