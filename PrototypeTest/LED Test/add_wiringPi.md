@@ -15,3 +15,4 @@ cd wiringPi
 ```
 gpio -v
 ```
+![image](https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/gpio%20-v.PNG)
