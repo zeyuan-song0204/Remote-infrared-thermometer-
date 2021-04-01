@@ -1,6 +1,7 @@
 
 ## Raspberry Pi wired with I2C
 ![image](https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/AMG8833_i2C.PNG)
+<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/AMG8833.jpg" width="300" height="393"/>
 - Pi 3V3 to sensor VIN
 - Pi GND to sensor GND
 - Pi SCL to sensor SCL
