@@ -52,3 +52,8 @@
    ```
       raspistill -o Desktop/image.jpg -w 500 -h 500
    ```
+- **Run** <br>
+  ```
+  cmake ..
+  make
+  ```
