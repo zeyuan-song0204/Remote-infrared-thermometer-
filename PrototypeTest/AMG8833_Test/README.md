@@ -6,4 +6,8 @@
 - Pi SCL to sensor SCL
 - Pi SDA to sensor SDA
 
-
+## Python Installation of AMG88xx Library
+```
+sudo pip3 install adafruit-circuitpython-amg88xx
+```
+##
