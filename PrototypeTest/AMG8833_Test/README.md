@@ -15,6 +15,8 @@ sudo pip3 install adafruit-circuitpython-amg88xx
 ```
 sudo raspi-config
 ```
+Interface Options--->I2C--->Enable
+<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/i2C_interface.PNG" width="393" height="300"/>
 Then check
 ```
 sudo i2cdetect -y 1
