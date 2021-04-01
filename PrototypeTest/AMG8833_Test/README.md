@@ -11,4 +11,11 @@
 ```
 sudo pip3 install adafruit-circuitpython-amg88xx
 ```
-##
+## Open i2c interface 
+```
+sudo raspi-config
+```
+Then check
+```
+sudo i2cdetect -y 1
+```
