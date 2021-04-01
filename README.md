@@ -11,9 +11,9 @@ Contactless infrared thermomter System for Covid-19 epidemic prevention and cont
 - [Thermal Imager(GY-AMG8833)](https://www.amazon.co.uk/ICQUANZX-GY-AMG8833-Infrared-Thermal-Temperature/dp/B07Z21K8YC/ref=sr_1_3?dchild=1&keywords=AMG8833&qid=1613448066&sr=8-3)
 - [GPIO extender](https://www.amazon.co.uk/WINGONEER%C2%AE-Breakout-Expansion-Ribbon-Raspberry/dp/B01N562X2P/ref=sr_1_3?crid=6J10DRP2SKJH&dchild=1&keywords=raspberry+pi+gpio+extender&qid=1613447926&sprefix=raspberry+pi+gpio%2Caps%2C152&sr=8-3)
 ## Prerequisites
-OpenCV is definitely needed to installed on Raspberry Pi.The version used for this project is 4.1.0.<br>
-WiringPi is a basic library to applied on GPIO control functions.<br>
-Adafruit_Blinka library provides the CircuitPython support in Python.This may alsp need to enabling I2C on Pi platform.<br>
-AMG88xx library supports AMG8833 sensor
+OpenCV is definitely needed to installed on Raspberry Pi.The version used for this project is 4.1.0.
+WiringPi is a basic library to applied on GPIO control functions.
+Adafruit_Blinka library provides the CircuitPython support in Python.This may alsp need to enabling I2C on Pi platform.
+AMG88xx library supports AMG8833 sensor.<br>
 
 
