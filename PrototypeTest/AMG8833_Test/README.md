@@ -24,4 +24,4 @@ sudo i2cdetect -y 1
 Open i2C complete!<br>
 
 ### Run the code and result bellow
-<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/Thermal%20Imager%20result.PNG" width="393" height="300"/><br>
+<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/Thermal%20Imager%20result.PNG" width="300" height="393"/><br>
