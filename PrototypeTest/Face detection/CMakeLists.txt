@@ -1,9 +1,13 @@
 cmake_minimum_required(VERSION 3.13)
+
 project(face_detection)
+
 find_package(OpenCV REQUIRED)
 find_library(wiringPi_LIB wiringPi)
 find_package(Threads)
+
 add_executable(face_detection face_detection.cpp)
+
 target_link_libraries(face_detection ${OpenCV_LIBS})
 target_link_libraries(face_detection ${wiringPi_LIB})
 target_link_libraries(face_detection ${CMAKE_THREAD_LIBS_INIT})
