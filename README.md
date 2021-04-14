@@ -1,6 +1,6 @@
 # Remote Infrared Face Thermometer Alertor :computer:
 Contactless infrared thermomter System for Covid-19 epidemic prevention and control.<br>
-<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/final device.jpg" width="500" height="393"/><br>
+<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/final device.jpg" width="500" height="500"/><br>
 Follow me on [![Twitter URL](http://i.imgur.com/tXSoThF.png)](https://twitter.com/Leon83677052)
 # About The Project
 ## Build with
