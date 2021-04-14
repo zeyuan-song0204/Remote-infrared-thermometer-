@@ -18,7 +18,7 @@ Contactless infrared thermomter System for Covid-19 epidemic prevention and cont
 OpenCV is definitely needed to installed on Raspberry Pi.The version used for this project is 4.1.0.WiringPi is a basic library to applied on GPIO control functions.Adafruit_Blinka library provides the CircuitPython support in Python.This may alsp need to enabling I2C on Pi platform.And AMG88xx library supports AMG8833 sensor.<br>
 ## Marketing
 This project is marketed on Tiwtter[![Twitter URL](http://i.imgur.com/tXSoThF.png)](https://twitter.com/Leon83677052)<br>
-[![Twitter URL]<img src="https://i.imgur.com/0Rz10Ws.png" width="100" height="100"/>](https://twitter.com/Leon83677052)
+<a href="https://twitter.com/Leon83677052"><img src="https://i.imgur.com/0Rz10Ws.png" width="100" height="100"/></a>
 
 
 
