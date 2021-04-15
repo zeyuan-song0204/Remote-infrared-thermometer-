@@ -57,3 +57,5 @@
   cmake ..
   make
   ```
+- **Result**<br>
+<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/face_detection_result.jpg" width="500" height="500"><br>
