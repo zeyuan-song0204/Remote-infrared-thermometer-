@@ -1,4 +1,4 @@
-## Buzzer &Led lights Test
+# Buzzer &Led lights Test
 
 ## Install wiringPi
 ```
