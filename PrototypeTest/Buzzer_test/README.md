@@ -17,6 +17,12 @@ cd wiringPi
 gpio -v
 ```
 ![image](https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/gpio%20-v.PNG)<br>
+## LED lights
+- Pi GND to sensor GND
+- Pi GPIO26 to sensor R
+- Pi GPIO19 to sensor Y
+- Pi GPIO13 to sensor GSDA
+
 <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/led%26buzzer.jpg" width="400" height="300"/><br>
 <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/GPIO%20Extension%20Board.jpg" width="300" height="400"/>
 <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/gpio%20table.PNG" width="300" height="400"/>
