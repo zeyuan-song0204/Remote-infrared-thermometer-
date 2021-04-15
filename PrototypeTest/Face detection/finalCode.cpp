@@ -4,6 +4,8 @@
 #include<thread>
 #include<pthread.h>
 #include<iostream>
+#include<csignal>
+#include<Python.h>
 
 using namespace cv;
 using namespace std;
@@ -13,7 +15,7 @@ using namespace std;
 #define YELLOW  24
 #define GREEN 23
 string Path="/home/pi/Piproject/haarcascade_frontalface_default.xml";
-string eye_Path="/home/pi/Piproject/haarcascade_eye_tree_eyeglasses.xml";
+//string eye_Path="/home/pi/Piproject/haarcascade_eye_tree_eyeglasses.xml";
 //string Path="/home/pi/Piproject/haarcascade_eye.xml";
 
 void initGpio(){
@@ -31,11 +33,62 @@ void offLed(){
     digitalWrite(GREEN,LOW);
     digitalWrite(YELLOW,LOW);
 }
+void testSignal(int signal){
+    
+    //Buzzer
+    digitalWrite(Buzzer,HIGH);
+    delay(200);
+    digitalWrite(Buzzer,LOW);
+    delay(200);
+    //LED
+    printf("green on\n");
+    digitalWrite(GREEN,HIGH);
+    //rectangle(frame,eyes[t],Scalar(0,0,255),2,8);
+    //putText(frame, "Hello", cv::print(200,200), &font, Scalar(255, 0, 0));
+}
 
 int main()
 {
+    int result;
     std::thread thread_init(initGpio);
     std::thread thread_offLed(offLed);
+    std::signal(SIGINT,testSignal);
+
+    //PyObject *pName,*pModule,*pDict,*pFunc,*pArgs,*pValue;
+    Py_Initialize();
+    PyObject* pFunc=nullptr;
+    PyObject* pModule=nullptr;
+    if(Py_IsInitialized()){
+        PyRun_SimpleString("print('PyisInitialized')"); 
+        
+        pModule=PyImport_ImportModule("adafruit_amg88xx");
+        if(pModule==nullptr){
+            cout<<pModule<<endl;
+        }else{
+            printf("import python module failed");
+        }
+    }
+    //Py_DECREF(pModule);
+    //Py_DECREF(pFunc);
+    Py_Finalize();
+    
+    
+    /*pName=PyBytes_FromString("test");
+    pModule=PyImport_Import(pName);
+    if(!pModule){
+        printf("can't find test.py");
+    }
+    pFunc=PyObject_GetAttrString(pModule,"t");
+    /*pDict=PyModule_GetDict(pModule);
+    //find fun
+    pFunc=PyDict_GetItemString(pDict,"t");
+     
+    pValue=PyObject_CallObject(pFunc,NULL);
+    printf("%ld",PyLong_AsLong(pValue));*/
+    
+
+
+
 
     VideoCapture cap(0); 
     if(!cap.isOpened())  
@@ -52,13 +105,13 @@ int main()
         return -1;
     }
 
-    CascadeClassifier eye_Classifier;
+    /*CascadeClassifier eye_Classifier;
     eye_Classifier.load(eye_Path);
     if(!eye_Classifier.load(eye_Path))
     {
         cout<<"eye_Classifier loading failed"<<endl;
         return -1;
-    }
+    }*/
     
     //cv::Font  font;
     //cv::InitFont(&font,CV_FONT_HERSHEY_SIMPLEX,1.0, 1.0);
@@ -81,21 +134,7 @@ int main()
         for(size_t t=0;t<faces.size();t++)
         {
             rectangle(frame,faces[t],Scalar(0,255,0),2,8);
-            //Buzzer
-            digitalWrite(Buzzer,HIGH);
-            delay(200);
-            digitalWrite(Buzzer,LOW);
-            delay(200);
-            //trafficLight
-            printf("green on\n");
-            
-            digitalWrite(GREEN,HIGH);
-            
-            
-            //rectangle(frame,eyes[t],Scalar(0,0,255),2,8);
-            //putText(frame, "Hello", cv::print(200,200), &font, Scalar(255, 0, 0));
-            
-       
+            raise(SIGINT);
         }
 
         imshow("face detector", frame);
