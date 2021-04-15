@@ -1,11 +1,12 @@
 #include "opencv2/opencv.hpp"
 #include<wiringPi.h>
 #include<stdio.h>
+#include<time.h>
 #include<thread>
 #include<pthread.h>
 #include<iostream>
 #include<csignal>
-#include<Python.h>
+#include<python3.7m/Python.h>
 
 using namespace cv;
 using namespace std;
@@ -17,7 +18,15 @@ using namespace std;
 string Path="/home/pi/Piproject/haarcascade_frontalface_default.xml";
 //string eye_Path="/home/pi/Piproject/haarcascade_eye_tree_eyeglasses.xml";
 //string Path="/home/pi/Piproject/haarcascade_eye.xml";
-
+PyObject* sensor=nullptr;
+PyObject* pFunc=nullptr;
+PyObject* pModule=nullptr;
+PyObject* board=nullptr;
+PyObject* I2C_func=nullptr; 
+PyObject* i2c=nullptr;
+PyObject* AMG88xx=nullptr;
+PyObject* args=nullptr;
+double temperature;
 void initGpio(){
     if(wiringPiSetup()==-1){
         printf("setup wiringPi failed!");
@@ -33,62 +42,68 @@ void offLed(){
     digitalWrite(GREEN,LOW);
     digitalWrite(YELLOW,LOW);
 }
-void testSignal(int signal){
-    
-    //Buzzer
+void GreenOn_Signal(int signal){  
+    /*Buzzer
     digitalWrite(Buzzer,HIGH);
     delay(200);
     digitalWrite(Buzzer,LOW);
-    delay(200);
+    delay(200);*/
     //LED
     printf("green on\n");
     digitalWrite(GREEN,HIGH);
+    digitalWrite(RED,LOW);
+    digitalWrite(YELLOW,LOW);
     //rectangle(frame,eyes[t],Scalar(0,0,255),2,8);
     //putText(frame, "Hello", cv::print(200,200), &font, Scalar(255, 0, 0));
 }
+void RedOn_Signal(int signal){
+    printf("red on\n");
+    digitalWrite(GREEN,LOW);
+    digitalWrite(RED,HIGH);
+    digitalWrite(YELLOW,LOW);
+}
+void Green_on(){
 
-int main()
-{
-    int result;
-    std::thread thread_init(initGpio);
-    std::thread thread_offLed(offLed);
-    std::signal(SIGINT,testSignal);
-
-    //PyObject *pName,*pModule,*pDict,*pFunc,*pArgs,*pValue;
+}
+double getTemp(int row_po,int col_po){
+    PyObject *pixels=PyObject_GetAttrString(sensor,"pixels");
+    PyObject *row=PyList_GetItem(pixels,row_po);
+    PyObject *tem=PyList_GetItem(row,row_po);
+    return PyFloat_AsDouble(tem);
+}
+void Call_Python(){
     Py_Initialize();
-    PyObject* pFunc=nullptr;
-    PyObject* pModule=nullptr;
     if(Py_IsInitialized()){
-        PyRun_SimpleString("print('PyisInitialized')"); 
+        //PyRun_SimpleString("print('PyisInitialized')"); 
         
         pModule=PyImport_ImportModule("adafruit_amg88xx");
-        if(pModule==nullptr){
-            cout<<pModule<<endl;
+        if(pModule){
+            //cout<<pModule<<endl;
+            board=PyImport_ImportModule("board");
+            I2C_func=PyObject_GetAttrString(board,"I2C");
+            i2c=_PyObject_CallNoArg(I2C_func);
+            AMG88xx=PyObject_GetAttrString(pModule,"AMG88XX");
+            args=PyTuple_New(1);           
+            PyTuple_SetItem(args,0,i2c);
+            sensor=PyObject_Call(AMG88xx,args,NULL);
+            double tem =getTemp(4,4);
+            cout<<tem<<endl;
+            temperature=tem;
+            delay(1000);
         }else{
-            printf("import python module failed");
+            printf("import python module failed \n");
         }
     }
-    //Py_DECREF(pModule);
-    //Py_DECREF(pFunc);
     Py_Finalize();
-    
-    
-    /*pName=PyBytes_FromString("test");
-    pModule=PyImport_Import(pName);
-    if(!pModule){
-        printf("can't find test.py");
-    }
-    pFunc=PyObject_GetAttrString(pModule,"t");
-    /*pDict=PyModule_GetDict(pModule);
-    //find fun
-    pFunc=PyDict_GetItemString(pDict,"t");
-     
-    pValue=PyObject_CallObject(pFunc,NULL);
-    printf("%ld",PyLong_AsLong(pValue));*/
-    
+}
+int main()
+{
+    std::thread thread_init(initGpio);
+    std::thread thread_offLed(offLed);
+    //std::signal(SIGINT,GreenOn_Signal);
+    //std::signal(SIGILL,GreenOn_Signal);
 
-
-
+   
 
     VideoCapture cap(0); 
     if(!cap.isOpened())  
@@ -134,14 +149,27 @@ int main()
         for(size_t t=0;t<faces.size();t++)
         {
             rectangle(frame,faces[t],Scalar(0,255,0),2,8);
-            raise(SIGINT);
+            
+            Call_Python();
+            cout<<temperature+7.5<<endl;
+            if(temperature>=38){
+                //raise(SIGILL);
+                printf("red on\n");
+                digitalWrite(GREEN,LOW);
+                digitalWrite(RED,HIGH);
+                digitalWrite(YELLOW,LOW);
+            }else{
+                //raise(SIGINT);
+                printf("green on\n");
+                digitalWrite(GREEN,HIGH);
+                digitalWrite(RED,LOW);
+                digitalWrite(YELLOW,LOW);
+            }
         }
 
         imshow("face detector", frame);
         if(waitKey(30) >= 0) break;
     }
-    digitalWrite(RED,LOW);
-    digitalWrite(GREEN,LOW);
-    digitalWrite(YELLOW,LOW);
+    offLed();
     return 0;
 }
