@@ -1,4 +1,4 @@
-### Installation
+### Installation OpenCV
 - **cmake**<br>
 ```
    sudo apt-get install cmake
