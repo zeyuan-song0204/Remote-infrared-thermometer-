@@ -19,7 +19,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
 ## Marketing
 This project is marketed on Tiwtter and Instagram <br>
 &nbsp;&nbsp;<a href="https://twitter.com/Leon83677052"><img src="https://i.imgur.com/0Rz10Ws.png" width="60" height="60" style="margin: 0 auto;"/></a>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/2605623s/"><img src="https://i.imgur.com/0Rz10Ws.png" width="60" height="60"/></a>
+
 
 
 
