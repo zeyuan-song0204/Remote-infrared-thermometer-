@@ -18,6 +18,65 @@ Contactless infrared thermomter System for Covid-19 epidemic prevention and cont
 - [GPIO extender](https://www.amazon.co.uk/WINGONEER%C2%AE-Breakout-Expansion-Ribbon-Raspberry/dp/B01N562X2P/ref=sr_1_3?crid=6J10DRP2SKJH&dchild=1&keywords=raspberry+pi+gpio+extender&qid=1613447926&sprefix=raspberry+pi+gpio%2Caps%2C152&sr=8-3)
 ## Prerequisites
 OpenCV is definitely needed to installed on Raspberry Pi.The version used for this project is 4.1.0.WiringPi is a basic library to applied on GPIO control functions.Adafruit_Blinka library provides the CircuitPython support in Python.This may alsp need to enabling I2C on Pi platform.And AMG88xx library supports AMG8833 sensor.<br>
+### Installation OpenCV
+- **cmake**<br>
+```
+   sudo apt-get install cmake
+```
+- **openCV-4.1.0**<br>
+   1.update raspbian and Increase the swap-size
+   ```
+      sudo apt-get update && sudo apt-get upgrade && sudo rpi-update
+      sudo nano /etc/dphys-swapfile
+      #CONF_SWAPSIZE=100
+      CONF_SWAPSIZE=2048
+   ```
+   2.Install tools and libraries for openCV
+   ```
+      sudo apt-get install build-essential cmake pkg-config
+      sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
+      sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+      sudo apt-get install libxvidcore-dev libx264-dev
+      sudo apt-get install libgtk2.0-dev libgtk-3-dev
+      sudo apt-get install libatlas-base-dev gfortran
+   ```
+   3.Get source code
+   ```
+      wget -O opencv.zip https://github.com/opencv/opencv/archive/4.1.0.zip
+      wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.1.0.zip
+      unzip opencv.zip
+      unzip opencv_contrib.zip
+   ```
+   4.Compile openCV
+   ```
+      cd ~/opencv-4.1.0/
+      mkdir build
+      cd build
+      cmake -D CMAKE_BUILD_TYPE=RELEASE \
+       -D CMAKE_INSTALL_PREFIX=/usr/local \
+       -D INSTALL_PYTHON_EXAMPLES=ON \
+       -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-4.1.0/modules \
+       -D BUILD_EXAMPLES=ON ..
+   ```
+   5.Build and Install openCV
+   ```
+      make -j4
+      sudo make install && sudo ldconfig
+   ```
+- **Camera installation**<br>
+   Enable the Camera Interface
+   ```
+      sudo raspi-config
+   ```
+   Test camera
+   ```
+      raspistill -o Desktop/image.jpg -w 500 -h 500
+   ```
+- **Run** <br>
+  ```
+  cmake ..
+  make
+  ```
 ## License
 Project is distributed under <a href="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/LICENSE">MIT License</a>
 ## Marketing
