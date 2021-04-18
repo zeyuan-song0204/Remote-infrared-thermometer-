@@ -73,7 +73,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
       sudo make install && sudo ldconfig
    ```
    6.Run face detection and result shows below<br>
-   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/face_detection_result.jpg" width="300" height="300"><br>
+   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/face_detection_result.jpg" width="400" height="300"><br>
 
    
 ### AMG8833 installation and test
