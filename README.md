@@ -17,7 +17,7 @@ Contactless infrared thermomter System for Covid-19 epidemic prevention and cont
 ## Prerequisites
 OpenCV is definitely needed to installed on Raspberry Pi.The version used for this project is 4.1.0.WiringPi is a basic library to applied on GPIO control functions.Adafruit_Blinka library provides the CircuitPython support in Python.This may alsp need to enabling I2C on Pi platform.And AMG88xx library supports AMG8833 sensor.<br>
 ## License
-Project is distributed under MIT License
+Project is distributed under <a href="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/LICENSE">MIT License</a>
 ## Marketing
 This project is marketed on Tiwtter and Instagram <br>
 &nbsp;&nbsp;<a href="https://twitter.com/Leon83677052"><img src="https://i.imgur.com/0Rz10Ws.png" width="80" height="80" style="margin: 0 auto;"/></a>
