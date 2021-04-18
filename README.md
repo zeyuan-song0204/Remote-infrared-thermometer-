@@ -97,7 +97,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
    <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/i2C_detect.PNG" /><br>
    Open i2C complete!<br>
 
-   4.Run the code and result bellow
+   4.Run the Amg8833 test code and result bellow<br>
    <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/Thermal%20Imager%20result.PNG" width="300" height="317"/><br>
 
 - **Run** <br>
