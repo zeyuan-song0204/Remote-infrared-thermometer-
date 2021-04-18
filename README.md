@@ -18,6 +18,15 @@ Contactless infrared thermomter System for Covid-19 epidemic prevention and cont
 - [GPIO extender](https://www.amazon.co.uk/WINGONEER%C2%AE-Breakout-Expansion-Ribbon-Raspberry/dp/B01N562X2P/ref=sr_1_3?crid=6J10DRP2SKJH&dchild=1&keywords=raspberry+pi+gpio+extender&qid=1613447926&sprefix=raspberry+pi+gpio%2Caps%2C152&sr=8-3)
 ## Prerequisites
 OpenCV is definitely needed to installed on Raspberry Pi.The version used for this project is 4.1.0.WiringPi is a basic library to applied on GPIO control functions.Adafruit_Blinka library provides the CircuitPython support in Python.This may alsp need to enabling I2C on Pi platform.And AMG88xx library supports AMG8833 sensor.<br>
+### Camera installation and test
+   Enable the Camera Interface
+   ```
+      sudo raspi-config
+   ```
+   Test camera
+   ```
+      raspistill -o Desktop/image.jpg -w 500 -h 500
+   ```
 ### Installation OpenCV
 - **cmake**<br>
 ```
@@ -65,17 +74,9 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
    ```
    6.Run face detection and result shows below<br>
    <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/face_detection_result.jpg" width="250" height="250"><br>
-- **Camera installation and test**<br>
-   Enable the Camera Interface
-   ```
-      sudo raspi-config
-   ```
-   Test camera
-   ```
-      raspistill -o Desktop/image.jpg -w 500 -h 500
-   ```
+
    
-- **AMG8833 installation and test**<br>
+### AMG8833 installation and test
    <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/AMG8833.jpg" width="300" height="393"/><br>
    - Pi 3V3 to sensor VIN
    - Pi GND to sensor GND
@@ -101,7 +102,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
 
    4.Run the Amg8833 test code and result bellow<br>
    <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/Thermal%20Imager%20result.PNG" width="250" height="250"/><br>
-- **Buzzer &Led lights Test**<br>
+### Install WiringPi Lib
    1.Install wiringPi
    ```
    sudo apt-get install git-core
