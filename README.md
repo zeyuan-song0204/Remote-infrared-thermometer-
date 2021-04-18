@@ -126,6 +126,12 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
 
 ## License
 Project is distributed under <a href="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/LICENSE">MIT License</a>
+## Contact
+
+Zeyuan Song - 2605623s@student.gla.ac.uk
+
+Project Link: [https://github.com/zeyuan-song0204/Remote-infrared-thermometer-](https://github.com/zeyuan-song0204/Remote-infrared-thermometer-)
+
 ## Marketing
 This project is marketed on Tiwtter and Instagram <br>
 &nbsp;&nbsp;<a href="https://twitter.com/Leon83677052"><img src="https://i.imgur.com/0Rz10Ws.png" width="80" height="80" style="margin: 0 auto;"/></a>
