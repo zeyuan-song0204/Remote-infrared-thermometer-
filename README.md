@@ -1,12 +1,13 @@
-# Remote Infrared Thermometer Alertor :
-Contactless infrared thermomter System for Covid-19 epidemic prevention and control.It can be applied in airport or train entrance as a security check during covid-19 epidemic.If it detect a person whose body temperature is above 37.5℃ which cause the red light on and buzzer ringing,then the person cann't allowd to get in the public transportation. This design aim to decline the number of virus carriers appear in public palace and reduce the spread of virus.<br> 
-<br>
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+# Remote Infrared Thermometer Alertor :
+Contactless infrared thermomter System for Covid-19 epidemic prevention and control.It can be applied in airport or train entrance as a security check during covid-19 epidemic.If it detect a person whose body temperature is above 37.5℃ which cause the red light on and buzzer ringing,then the person cann't allowd to get in the public transportation. This design aim to decline the number of virus carriers appear in public palace and reduce the spread of virus.<br> 
+<br>
+
 
 <br>
 <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/final device.jpg" width="500" height="500"/><br>
