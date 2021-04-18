@@ -63,6 +63,8 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
       make -j4
       sudo make install && sudo ldconfig
    ```
+   6.Run face detection and result shows below<br>
+   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/face_detection_result.jpg" width="500" height="500"><br>
 - **Camera installation and test**<br>
    Enable the Camera Interface
    ```
@@ -99,7 +101,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
 
    4.Run the Amg8833 test code and result bellow<br>
    <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/Thermal%20Imager%20result.PNG" width="300" height="317"/><br>
-- **Buzzer &Led lights Test**
+- **Buzzer &Led lights Test**<br>
    1.Install wiringPi
    ```
    sudo apt-get install git-core
@@ -130,11 +132,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
    - Pi 3V3 to sensor VCC
    <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/GPIO%20Extension%20Board.jpg" width="300" height="400"/>
 
-- **Run** <br>
-  ```
-  cmake ..
-  make
-  ```
+
 ## License
 Project is distributed under <a href="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/LICENSE">MIT License</a>
 ## Marketing
