@@ -119,19 +119,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
    ```
    gpio -v
    ```
-   ![image](https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/gpio%20-v.PNG)<br>
-   3.LED lights
-   - Pi GND to sensor GND
-   - Pi GPIO26 to sensor R
-   - Pi GPIO19 to sensor Y
-   - Pi GPIO13 to sensor GSDA
-
-   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/led%26buzzer.jpg" width="250" height="250"/><br>
-   4.Buzzer
-   - Pi GND to sensor GND
-   - Pi I/O to sensor GPIO17
-   - Pi 3V3 to sensor VCC
-   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/GPIO%20Extension%20Board.jpg" width="250" height="250"/>
+   
 
 
 ## License
