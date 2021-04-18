@@ -64,7 +64,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
       sudo make install && sudo ldconfig
    ```
    6.Run face detection and result shows below<br>
-   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/face_detection_result.jpg" width="500" height="500"><br>
+   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/face_detection_result.jpg" width="250" height="250"><br>
 - **Camera installation and test**<br>
    Enable the Camera Interface
    ```
@@ -91,7 +91,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
    sudo raspi-config
    ```
    3.Interface Options--->I2C--->Enable <br>
-   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/i2C_interface.PNG" width="393" height="300"/> <br>
+   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/i2C_interface.PNG" width="250" height="250"/> <br>
    Then check<br>
    ```
    sudo i2cdetect -y 1
@@ -100,7 +100,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
    Open i2C complete!<br>
 
    4.Run the Amg8833 test code and result bellow<br>
-   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/Thermal%20Imager%20result.PNG" width="300" height="317"/><br>
+   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/Thermal%20Imager%20result.PNG" width="250" height="250"/><br>
 - **Buzzer &Led lights Test**<br>
    1.Install wiringPi
    ```
@@ -125,12 +125,12 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
    - Pi GPIO19 to sensor Y
    - Pi GPIO13 to sensor GSDA
 
-   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/led%26buzzer.jpg" width="400" height="300"/><br>
+   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/led%26buzzer.jpg" width="250" height="250"/><br>
    4.Buzzer
    - Pi GND to sensor GND
    - Pi I/O to sensor GPIO17
    - Pi 3V3 to sensor VCC
-   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/GPIO%20Extension%20Board.jpg" width="300" height="400"/>
+   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/GPIO%20Extension%20Board.jpg" width="250" height="250"/>
 
 
 ## License
