@@ -25,9 +25,9 @@ PyObject* board=nullptr;
 PyObject* I2C_func=nullptr; 
 PyObject* i2c=nullptr;
 PyObject* AMG88xx=nullptr;
-PyObject* args=nullptr;
-double temperature;
-void initGpio(){
+PyObject* xxx=nullptr;
+double temperature=0;
+/*void initGpio(){
     if(wiringPiSetup()==-1){
         printf("setup wiringPi failed!");
     } 
@@ -36,13 +36,93 @@ void initGpio(){
     pinMode(YELLOW,OUTPUT);
     pinMode(GREEN,OUTPUT);
     printf("InitGpio successed\n");
+}*/
+void *initGpio_thread(void *args){
+    if(wiringPiSetup()==-1){
+        printf("setup wiringPi failed!");
+    } 
+    pinMode(Buzzer,OUTPUT);
+    pinMode(RED,OUTPUT);
+    pinMode(YELLOW,OUTPUT);
+    pinMode(GREEN,OUTPUT);
+    printf("InitGpio successed(thread)\n");
+    return(void *)0;
+}
+void *Buzzer_thread(void *args){
+    if(temperature>=38){
+        //warning
+        for(int i=0;i<10;i++){
+            digitalWrite(Buzzer,HIGH);
+            delay(100);
+            digitalWrite(Buzzer,LOW);
+            delay(100);
+            }
+        }else{
+            digitalWrite(Buzzer,HIGH);
+            delay(1000);
+            digitalWrite(Buzzer,LOW);
+            delay(1000);
+        }
+    return(void *)0;
+        
+}
+void *Led_thread(void *args){
+    if(temperature>37.5){
+        //warning
+        printf("Warning\n");
+        digitalWrite(GREEN,LOW);
+        digitalWrite(RED,HIGH);
+        digitalWrite(YELLOW,LOW);
+        }else{
+            digitalWrite(GREEN,HIGH);
+            digitalWrite(RED,LOW);
+            digitalWrite(YELLOW,LOW);
+        }
+    return(void *)0;
 }
 void offLed(){
     digitalWrite(RED,LOW);
     digitalWrite(GREEN,LOW);
     digitalWrite(YELLOW,LOW);
 }
-void GreenOn_Signal(int signal){  
+double getTemp(int row_po,int col_po){
+    PyObject *pixels=PyObject_GetAttrString(sensor,"pixels");
+    PyObject *row=PyList_GetItem(pixels,row_po);
+    PyObject *tem=PyList_GetItem(row,row_po);
+    return PyFloat_AsDouble(tem);
+}
+void *Call_Python(void *args){
+    for(;;){
+        Py_Initialize();
+        if(Py_IsInitialized()){
+            //PyRun_SimpleString("print('PyisInitialized')"); 
+            pModule=PyImport_ImportModule("adafruit_amg88xx");
+            if(pModule){
+                //cout<<pModule<<endl;
+                board=PyImport_ImportModule("board");
+                I2C_func=PyObject_GetAttrString(board,"I2C");
+                i2c=_PyObject_CallNoArg(I2C_func);
+                AMG88xx=PyObject_GetAttrString(pModule,"AMG88XX");
+                xxx=PyTuple_New(1);           
+                PyTuple_SetItem(xxx,0,i2c);
+                sensor=PyObject_Call(AMG88xx,xxx,NULL);
+                double tem =getTemp(4,4);
+                //cout<<tem<<endl;
+                temperature=tem;
+                if(temperature==0){
+                    cout<<temperature<<endl;
+                }else{
+                    cout<<temperature+5.5<<endl;
+                }
+                delay(1000);
+            }else{
+                printf("import python module failed \n");
+            }
+        }
+        Py_Finalize();
+    }
+   }
+/*void GreenOn(){  
     printf("green on\n");
     digitalWrite(GREEN,HIGH);
     digitalWrite(RED,LOW);
@@ -51,7 +131,7 @@ void GreenOn_Signal(int signal){
     //putText(frame, "Hello", cv::print(200,200), &font, Scalar(255, 0, 0));
 }
 void RedOn_Signal(int signal){
-    printf("red on\n");
+    printf("Warning\n");
     digitalWrite(GREEN,LOW);
     digitalWrite(RED,HIGH);
     digitalWrite(YELLOW,LOW);
@@ -63,53 +143,34 @@ void Buzzer_warning(){
         digitalWrite(Buzzer,LOW);
         delay(10);
     }
-    
 }
+
 void Buzzer_testing(){
     digitalWrite(Buzzer,HIGH);
     delay(200);
     digitalWrite(Buzzer,LOW);
     delay(200);
-}
-double getTemp(int row_po,int col_po){
-    PyObject *pixels=PyObject_GetAttrString(sensor,"pixels");
-    PyObject *row=PyList_GetItem(pixels,row_po);
-    PyObject *tem=PyList_GetItem(row,row_po);
-    return PyFloat_AsDouble(tem);
-}
-void Call_Python(){
-    Py_Initialize();
-    if(Py_IsInitialized()){
-        //PyRun_SimpleString("print('PyisInitialized')"); 
-        
-        pModule=PyImport_ImportModule("adafruit_amg88xx");
-        if(pModule){
-            //cout<<pModule<<endl;
-            board=PyImport_ImportModule("board");
-            I2C_func=PyObject_GetAttrString(board,"I2C");
-            i2c=_PyObject_CallNoArg(I2C_func);
-            AMG88xx=PyObject_GetAttrString(pModule,"AMG88XX");
-            args=PyTuple_New(1);           
-            PyTuple_SetItem(args,0,i2c);
-            sensor=PyObject_Call(AMG88xx,args,NULL);
-            double tem =getTemp(4,4);
-            //cout<<tem<<endl;
-            temperature=tem;
-            delay(1000);
-        }else{
-            printf("import python module failed \n");
-        }
-    }
-    Py_Finalize();
-}
+}*/
 int main()
 {
-    std::thread thread_init(initGpio);
+    pthread_t th_init;
+    pthread_t th_buzzer;
+    pthread_t th_led;
+    pthread_t th_amg;
     std::thread thread_offLed(offLed);
-    //std::signal(SIGINT,GreenOn_Signal);
-    //std::signal(SIGILL,GreenOn_Signal);
-
-   
+    //std::thread thread_test(Call_Python);
+    int init=pthread_create(&th_init,NULL,initGpio_thread,NULL);
+    if(init!=0){
+        std::cout<<"threadInit create error"<<std::endl;
+    }
+    
+    int amg=pthread_create(&th_amg,NULL,Call_Python,NULL);
+    if(th_amg==0){
+        std::cout<<"threadAmg create error"<<std::endl;
+    }
+    
+    //std::thread thread_init(initGpio);
+    
 
     VideoCapture cap(0); 
     if(!cap.isOpened())  
@@ -137,9 +198,9 @@ int main()
     //cv::Font  font;
     //cv::InitFont(&font,CV_FONT_HERSHEY_SIMPLEX,1.0, 1.0);
 
-    thread_init.join();
-    thread_offLed.join();
-    
+    //thread_init.join();
+    //thread_offLed.join();
+    //thread_test.join();
     vector<Rect> faces;
     vector<Rect> eyes;
 
@@ -155,30 +216,34 @@ int main()
         for(size_t t=0;t<faces.size();t++)
         {
             rectangle(frame,faces[t],Scalar(0,255,0),2,8);
-            
-            Call_Python();
-            if(temperature==0){
-                ;
-            }else{
-                cout<<temperature+7.5<<endl;
+            int led=pthread_create(&th_led,NULL,Led_thread,NULL);
+            if(th_led==0){
+                std::cout<<"threadLed create error"<<std::endl;
             }
             
-            if(temperature>=38){
+            
+            int buzzer=pthread_create(&th_buzzer,NULL,Buzzer_thread,NULL);
+            if(th_buzzer==0){
+                std::cout<<"threadBuzzer create error"<<std::endl;
+            }
+            
+            //Call_Python();
+            /*if(temperature>=38){
                 //raise(SIGILL);
-                printf("red on\n");
+                printf("Warning\n");
                 digitalWrite(GREEN,LOW);
                 digitalWrite(RED,HIGH);
                 digitalWrite(YELLOW,LOW);
                 Buzzer_warning();
             }else{
                 //raise(SIGINT);
-                printf("green on\n");
+                //printf("green on\n");
                 digitalWrite(GREEN,HIGH);
                 digitalWrite(RED,LOW);
                 digitalWrite(YELLOW,LOW);
                 //Buzzer_testing();
                 Buzzer_testing();
-            }
+            }*/
         }
 
         imshow("face detector", frame);
