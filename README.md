@@ -73,18 +73,18 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
       raspistill -o Desktop/image.jpg -w 500 -h 500
    ```
    
-## Raspberry Pi wired with I2C
+### Raspberry Pi wired with I2C
 <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/AMG8833.jpg" width="300" height="393"/><br>
 - Pi 3V3 to sensor VIN
 - Pi GND to sensor GND
 - Pi SCL to sensor SCL
 - Pi SDA to sensor SDA
 
-## Python Installation of AMG88xx Library
+#### Python Installation of AMG88xx Library
 ```
 sudo pip3 install adafruit-circuitpython-amg88xx
 ```
-## Open i2c interface from Pi
+#### Open i2c interface from Pi
 ```
 sudo raspi-config
 ```
@@ -97,7 +97,7 @@ sudo i2cdetect -y 1
 <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/i2C_detect.PNG" /><br>
 Open i2C complete!<br>
 
-### Run the code and result bellow
+#### Run the code and result bellow
 <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/Thermal%20Imager%20result.PNG" width="300" height="317"/><br>
 
 - **Run** <br>
