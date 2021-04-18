@@ -63,7 +63,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
       make -j4
       sudo make install && sudo ldconfig
    ```
-- **Camera installation**<br>
+- **Camera installation and test**<br>
    Enable the Camera Interface
    ```
       sudo raspi-config
@@ -73,7 +73,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
       raspistill -o Desktop/image.jpg -w 500 -h 500
    ```
    
-- **Raspberry Pi wired with I2C**<br>
+- **AMG8833 installation and test**<br>
    <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/AMG8833.jpg" width="300" height="393"/><br>
    - Pi 3V3 to sensor VIN
    - Pi GND to sensor GND
@@ -99,6 +99,36 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
 
    4.Run the Amg8833 test code and result bellow<br>
    <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/Thermal%20Imager%20result.PNG" width="300" height="317"/><br>
+- **Buzzer &Led lights Test**
+   1.Install wiringPi
+   ```
+   sudo apt-get install git-core
+
+   sudo apt-get update
+
+   git clone git://git.drogon.net/wiringPi
+
+   cd wiringPi
+
+   ./build
+   ```
+   2.check
+   ```
+   gpio -v
+   ```
+   ![image](https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/gpio%20-v.PNG)<br>
+   3.LED lights
+   - Pi GND to sensor GND
+   - Pi GPIO26 to sensor R
+   - Pi GPIO19 to sensor Y
+   - Pi GPIO13 to sensor GSDA
+
+   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/led%26buzzer.jpg" width="400" height="300"/><br>
+   4.Buzzer
+   - Pi GND to sensor GND
+   - Pi I/O to sensor GPIO17
+   - Pi 3V3 to sensor VCC
+   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/GPIO%20Extension%20Board.jpg" width="300" height="400"/>
 
 - **Run** <br>
   ```
