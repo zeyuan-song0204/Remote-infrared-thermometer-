@@ -1,7 +1,7 @@
 # Remote Infrared Thermometer Alertor
 <br />
 <div align="center">
-    <img src="https://raw.githubusercontent.com/iwishiwasaneagle/boxofhope/main/images/logo.png" alt="Logo" height="160">
+    
 
   <h2 align="center">Box Of Hope</h2>  
   
