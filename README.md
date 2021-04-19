@@ -3,7 +3,7 @@
 <div align="center">
     
 
-  <h2 align="center">Box Of Hope</h2>  
+  <h2 align="center">Remote Infrared Thermometer Alertor</h2>  
   
   <p align="center">
     Event driven COVID-19 safety
@@ -14,14 +14,7 @@
     <a href="https://twitter.com/Leon83677052"><img height=40 src="image_forder/twitter.png"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://twitter.com/Leon83677052"><img height=40 src="image_forder/Facebook.png"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://www.instagram.com/2605623s/"><img height=40 src="image_forder/Instagram.svg.png"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
-    
-    <br />
-    <br />
-        ·
-    <a href="https://github.com/iwishiwasaneagle/boxofhope/issues/new?assignees=&labels=&template=bug_report.md&title=">Report Bug</a>
-    ·
-    <a href="https://github.com/iwishiwasaneagle/boxofhope/issues/new?assignees=&labels=&template=feature_request.md&title=">Request Feature</a>
-  </p>
+    </p>
 </div>
 
 
