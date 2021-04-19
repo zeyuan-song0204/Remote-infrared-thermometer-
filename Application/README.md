@@ -1,7 +1,6 @@
 This part is the final code for the project
 ### Run
-
-'''
+```
   mkdir build
   
   cd build
@@ -11,4 +10,4 @@ This part is the final code for the project
   make
   
   ./main
-  '''
+```
