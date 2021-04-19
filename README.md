@@ -108,11 +108,10 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
    sudo raspi-config
    ```
    3.Interface Options--->I2C--->Enable <br>
-   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/i2C_interface.PNG" width="350" height="250"/> <br>
-   Then check<br>
    ```
    sudo i2cdetect -y 1
    ```
+   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/i2C_interface.PNG" width="350" height="250"/>
    <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/i2C_detect.PNG" /><br>
    Open i2C complete!<br>
 
