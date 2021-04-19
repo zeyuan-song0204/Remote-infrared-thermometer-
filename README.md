@@ -2,7 +2,7 @@
 <div align="center">
     
 
-  <b align="center" style="font-size:20px">Remote Infrared Thermometer Alertor</b>  
+  <b align="center" style="font-size:50px">Remote Infrared Thermometer Alertor</b>  
   
   <p align="center">
     Event driven COVID-19 safety
