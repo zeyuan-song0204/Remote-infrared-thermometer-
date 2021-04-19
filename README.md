@@ -1,9 +1,7 @@
 # Remote Infrared Thermometer Alertor
 <br />
 <div align="center">
-  <a href="https://boxofhope.co.uk/">
     <img src="https://raw.githubusercontent.com/iwishiwasaneagle/boxofhope/main/images/logo.png" alt="Logo" height="160">
-  </a>
 
   <h2 align="center">Box Of Hope</h2>  
   
@@ -27,7 +25,10 @@
     <a href="https://github.com/iwishiwasaneagle/boxofhope/issues/new?assignees=&labels=&template=feature_request.md&title=">Request Feature</a>
   </p>
 </div>
+
+
 <div align="center">
+  
 ## About The Project
 <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/final device.jpg" width="350" height="350"/><br>
 Contactless infrared thermomter System for Covid-19 epidemic prevention and control.It can be applied in airport or train entrance as a security check during covid-19 epidemic.If it detect a person whose body temperature is above 37.5℃ which cause the red light on and buzzer ringing,then the person cann't allowd to get in the public transportation. This design aim to decline the number of virus carriers appear in public palace and reduce the spread of virus.<br> 
