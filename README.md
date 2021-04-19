@@ -132,10 +132,14 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
    gpio -v
    ```
    ![image](https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/gpio%20-v.PNG)<br>
-
    
-
-
+### Run Final Code
+  ```
+  cd build
+  cmake ..
+  make
+  ./face_detection
+  ```
 ## License
 Project is distributed under <a href="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/LICENSE">MIT License</a>
 ## Contact
