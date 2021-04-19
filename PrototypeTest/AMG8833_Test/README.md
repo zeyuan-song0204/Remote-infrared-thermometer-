@@ -1,6 +1,6 @@
 
 ## Raspberry Pi wired with I2C
-<img src="image_forder/AMG8833_image.jpg" width="300" height="393"/><br>
+<img src="main/image_forder/AMG8833_image.jpg" width="200" height="200"/><br>
 - Pi 3V3 to sensor VIN
 - Pi GND to sensor GND
 - Pi SCL to sensor SCL
