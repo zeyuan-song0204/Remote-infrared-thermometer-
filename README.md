@@ -93,7 +93,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
 
    
 ### AMG8833 installation and test
-   &nbsp;&nbsp;&nbsp;&nbsp;<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/AMG8833.jpg" width="200" height="293"/><br>
+   &nbsp;&nbsp;&nbsp;&nbsp;<img src="image_forder/AMG8833_image.jpg" width="200" height="200"/><br>
    - Pi 3V3 to sensor VIN
    - Pi GND to sensor GND
    - Pi SCL to sensor SCL
