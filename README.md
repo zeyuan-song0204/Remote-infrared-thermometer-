@@ -145,10 +145,6 @@ Zeyuan Song - 2605623s@student.gla.ac.uk
 
 Project Link: [https://github.com/zeyuan-song0204/Remote-infrared-thermometer-](https://github.com/zeyuan-song0204/Remote-infrared-thermometer-)
 
-## Marketing
-This project is marketed on Tiwtter and Instagram <br>
-&nbsp;&nbsp;<a href="https://twitter.com/Leon83677052"><img src="https://i.imgur.com/0Rz10Ws.png" width="80" height="80" style="margin: 0 auto;"/></a>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.instagram.com/2605623s/"><img src="https://i.imgur.com/JdLvg67.png" width="80" height="80"/></a>
 
 
 
