@@ -1,9 +1,33 @@
 # Remote Infrared Thermometer Alertor
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+<br />
+<div align="center">
+  <a href="https://boxofhope.co.uk/">
+    <img src="https://raw.githubusercontent.com/iwishiwasaneagle/boxofhope/main/images/logo.png" alt="Logo" height="160">
+  </a>
+
+  <h2 align="center">Box Of Hope</h2>  
+  
+  <p align="center">
+    Event driven COVID-19 safety
+    <br />
+    <a href="https://boxofhope.co.uk/docs/index.html"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://www.youtube.com/channel/UCG8txVUxQb3aCut7adeDU7A"><img height=40 src="images/youtube.svg"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://www.facebook.com/Box-of-Hope-106011608167716"><img height=40 src="images/facebook.svg"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://twitter.com/theboxofhope"><img height=40 src="images/twitter.svg"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://www.instagram.com/theboxofhope"><img height=40 src="images/instagram.svg"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://www.linkedin.com/company/theboxofhope"><img height=40 src="images/linkedin.svg"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <br />
+    <br />
+    <a href="https://www.boxofhope.co.uk">View Demo</a>
+    ·
+    <a href="https://github.com/iwishiwasaneagle/boxofhope/issues/new?assignees=&labels=&template=bug_report.md&title=">Report Bug</a>
+    ·
+    <a href="https://github.com/iwishiwasaneagle/boxofhope/issues/new?assignees=&labels=&template=feature_request.md&title=">Request Feature</a>
+  </p>
+</div>
+<div align="center">
 ## About The Project
 <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/final device.jpg" width="350" height="350"/><br>
 Contactless infrared thermomter System for Covid-19 epidemic prevention and control.It can be applied in airport or train entrance as a security check during covid-19 epidemic.If it detect a person whose body temperature is above 37.5℃ which cause the red light on and buzzer ringing,then the person cann't allowd to get in the public transportation. This design aim to decline the number of virus carriers appear in public palace and reduce the spread of virus.<br> 
