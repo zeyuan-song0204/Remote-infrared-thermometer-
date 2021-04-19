@@ -2,12 +2,11 @@
 <div align="center">
     
 
-  <b align="center">Remote Infrared Thermometer Alertor</b>  
+  <b align="center" font-size="50px">Remote Infrared Thermometer Alertor</b>  
   
   <p align="center">
     Event driven COVID-19 safety
     <br />
-    <a href="https://boxofhope.co.uk/docs/index.html"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://twitter.com/Leon83677052"><img height=40 src="image_forder/twitter.png"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
