@@ -23,11 +23,11 @@ gpio -v
 - Pi GPIO19 to sensor Y
 - Pi GPIO13 to sensor GSDA
 
-<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/led%26buzzer.jpg" width="250" height="150"/><br>
+<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/led%26buzzer.jpg" width="300" height="300"/><br>
 ## Buzzer
 - Pi GND to sensor GND
 - Pi I/O to sensor GPIO17
 - Pi 3V3 to sensor VCC
-<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/GPIO%20Extension%20Board.jpg" width="150" height="200"/>
+<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/GPIO%20Extension%20Board.jpg" width="200" height="300"/>
 ## Result
-<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/TTFR5912.GIF" width="300" height="300" />
+<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/TTFR5912.GIF" width="350" height="350" />
