@@ -8,7 +8,6 @@
     Design for COVID-19 safety
     <br />
     <br />
-    
     <a href="https://twitter.com/Leon83677052"><img height=40 src="image_forder/twitter.png"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://twitter.com/Leon83677052"><img height=40 src="image_forder/Facebook.png"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://www.instagram.com/2605623s/"><img height=40 src="image_forder/Instagram.svg.png"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
