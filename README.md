@@ -138,6 +138,8 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
    
 ### Run Final Code
   ```
+  mkdir build
+  
   cd build
   
   cmake ..
