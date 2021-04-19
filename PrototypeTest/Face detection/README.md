@@ -58,4 +58,5 @@
   make
   ```
 - **Result**<br>
-<img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/face_detection_result.jpg" width="500" height="500"><br>
+<img src="image_forder/TTFR5912.GIF" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="image_forder/face_detection.GIF" width="300" height="300"><br>
