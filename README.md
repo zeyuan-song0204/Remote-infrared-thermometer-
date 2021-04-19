@@ -136,8 +136,11 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
 ### Run Final Code
   ```
   cd build
+  
   cmake ..
+  
   make
+  
   ./face_detection
   ```
 ## License
