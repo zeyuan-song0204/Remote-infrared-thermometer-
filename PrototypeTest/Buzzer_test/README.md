@@ -29,5 +29,6 @@ gpio -v
 - Pi I/O to sensor GPIO17
 - Pi 3V3 to sensor VCC
 <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/GPIO%20Extension%20Board.jpg" width="200" height="300"/>
+
 ## Result
 <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/TTFR5912.GIF" width="350" height="350" />
