@@ -1,9 +1,9 @@
 <br />
 <div align="center">
-    
+    image_forder/logo.jpg
 
   <b align="center" font-size="50px">Remote Infrared Thermometer Alertor</b>  
-  
+  <img src="image_forder/logo.jpg" alt="Logo" height="160">
   <p align="center">
     Design for COVID-19 safety
     <br />
