@@ -88,7 +88,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
       sudo make install && sudo ldconfig
    ```
    6.Run face detection and result shows below<br>
-   <img src="image_forder/TTFR5912.GIF" width="300" height="300">
+   <img src="image_forder/TTFR5912.GIF" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
    <img src="image_forder/face_detection.GIF" width="300" height="300"><br>
 
    
