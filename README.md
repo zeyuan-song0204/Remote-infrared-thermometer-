@@ -112,7 +112,7 @@ OpenCV is definitely needed to installed on Raspberry Pi.The version used for th
    sudo i2cdetect -y 1
    ```
    <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/i2C_interface.PNG" width="350" height="250"/>
-   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/i2C_detect.PNG" /><br>
+   <img src="https://github.com/zeyuan-song0204/Remote-infrared-thermometer-/blob/main/image_forder/i2C_detect.PNG" width="350" height="250"/><br>
    Open i2C complete!<br>
 
    4.Run the Amg8833 test code and result bellow<br>
