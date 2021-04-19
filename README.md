@@ -1,4 +1,3 @@
-# Remote Infrared Thermometer Alertor
 <br />
 <div align="center">
     
