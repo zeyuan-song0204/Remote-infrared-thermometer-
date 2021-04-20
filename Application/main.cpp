@@ -49,16 +49,14 @@ void *Buzzer_thread(void *args){
             delay(100);
             }
         }else{
-            digitalWrite(Buzzer,HIGH);
-            delay(1000);
             digitalWrite(Buzzer,LOW);
-            delay(1000);
+            
         }
     return(void *)0;
         
 }
 void *Led_thread(void *args){
-    if(temperature>37.5){
+    if(temperature>=38){
         //warning
         printf("Warning\n");
         digitalWrite(GREEN,LOW);
@@ -103,7 +101,7 @@ void *Call_Python(void *args){
                 if(temperature==0){
                     ;
                 }else{
-                    cout<<temperature+5.5<<endl;
+                    cout<<temperature+7.5<<endl;
                 }
                 delay(1000);
             }else{
