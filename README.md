@@ -9,6 +9,7 @@
     <a href="https://twitter.com/Leon83677052"><img height=40 src="image_forder/twitter.png"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://www.facebook.com/zeyuan.song.98/"><img height=40 src="image_forder/Facebook.png"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://www.instagram.com/2605623s/"><img height=40 src="image_forder/Instagram.svg.png"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://hackaday.io/project/179286-remote-infrared-thermometer-alertor/"><img height=40 src="image_forder/hack.png"></img></a>&nbsp;&nbsp;&nbsp;&nbsp;
     </p>
 </div>
 
