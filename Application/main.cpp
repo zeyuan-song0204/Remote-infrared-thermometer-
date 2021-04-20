@@ -110,38 +110,14 @@ void *Call_Python(void *args){
         }
         Py_Finalize();
     }
-    
-    
    }
-/*void GreenOn(){  
-    printf("green on\n");
-    digitalWrite(GREEN,HIGH);
-    digitalWrite(RED,LOW);
-    digitalWrite(YELLOW,LOW);
-    //rectangle(frame,eyes[t],Scalar(0,0,255),2,8);
-    //putText(frame, "Hello", cv::print(200,200), &font, Scalar(255, 0, 0));
-}
-void RedOn_Signal(int signal){
-    printf("Warning\n");
-    digitalWrite(GREEN,LOW);
-    digitalWrite(RED,HIGH);
-    digitalWrite(YELLOW,LOW);
-}
-void Buzzer_warning(){
-    for(int i=0;i<10;i++){
-        digitalWrite(Buzzer,HIGH);
-        delay(10);
-        digitalWrite(Buzzer,LOW);
-        delay(10);
+void sig_handler(int sig){
+    if(sig==SIGINT){
+        offLed();
+        cout << "Terminated by Ctrl+C signal." << endl;
+        exit(0);
     }
 }
-
-void Buzzer_testing(){
-    digitalWrite(Buzzer,HIGH);
-    delay(200);
-    digitalWrite(Buzzer,LOW);
-    delay(200);
-}*/
 int main()
 {
     pthread_t th_init;
@@ -149,6 +125,7 @@ int main()
     pthread_t th_led;
     pthread_t th_amg;
     std::thread thread_offLed(offLed);
+    signal(SIGINT,sig_handler);
     //std::thread thread_test(Call_Python);
     int init=pthread_create(&th_init,NULL,initGpio_thread,NULL);
     if(init!=0){
@@ -160,9 +137,6 @@ int main()
         std::cout<<"threadAmg create error"<<std::endl;
     }
     
-    //std::thread thread_init(initGpio);
-    
-
     VideoCapture cap(0); 
     if(!cap.isOpened())  
     {
@@ -189,57 +163,35 @@ int main()
     //cv::Font  font;
     //cv::InitFont(&font,CV_FONT_HERSHEY_SIMPLEX,1.0, 1.0);
 
-    //thread_init.join();
-    //thread_offLed.join();
-    //thread_test.join();
+    
     vector<Rect> faces;
     vector<Rect> eyes;
+    
+        for(;;){
+            Mat frame;
+            cap >> frame; 
+            Classifier.detectMultiScale(frame,faces,1.1,3,0,Size(30,30));
+            //eye_Classifier.detectMultiScale(frame,eyes,1.1,3,0,Size(15,15));
+            digitalWrite(YELLOW,HIGH);
+            digitalWrite(GREEN,LOW);
+            for(size_t t=0;t<faces.size();t++)
+            {
+                rectangle(frame,faces[t],Scalar(0,255,0),2,8);
+                int led=pthread_create(&th_led,NULL,Led_thread,NULL);
+                if(th_led==0){
+                    std::cout<<"threadLed create error"<<std::endl;
+                }
+                
+                
+                int buzzer=pthread_create(&th_buzzer,NULL,Buzzer_thread,NULL);
+                if(th_buzzer==0){
+                    std::cout<<"threadBuzzer create error"<<std::endl;
+                }
+            }
 
-    for(;;)
-    {
-        Mat frame;
-        cap >> frame; 
-        Classifier.detectMultiScale(frame,faces,1.1,3,0,Size(30,30));
-        //eye_Classifier.detectMultiScale(frame,eyes,1.1,3,0,Size(15,15));
-        digitalWrite(YELLOW,HIGH);
-        digitalWrite(GREEN,LOW);
-        //printf("testing\n");
-        for(size_t t=0;t<faces.size();t++)
-        {
-            rectangle(frame,faces[t],Scalar(0,255,0),2,8);
-            int led=pthread_create(&th_led,NULL,Led_thread,NULL);
-            if(th_led==0){
-                std::cout<<"threadLed create error"<<std::endl;
-            }
-            
-            
-            int buzzer=pthread_create(&th_buzzer,NULL,Buzzer_thread,NULL);
-            if(th_buzzer==0){
-                std::cout<<"threadBuzzer create error"<<std::endl;
-            }
-            
-            //Call_Python();
-            /*if(temperature>=38){
-                //raise(SIGILL);
-                printf("Warning\n");
-                digitalWrite(GREEN,LOW);
-                digitalWrite(RED,HIGH);
-                digitalWrite(YELLOW,LOW);
-                Buzzer_warning();
-            }else{
-                //raise(SIGINT);
-                //printf("green on\n");
-                digitalWrite(GREEN,HIGH);
-                digitalWrite(RED,LOW);
-                digitalWrite(YELLOW,LOW);
-                //Buzzer_testing();
-                Buzzer_testing();
-            }*/
+            imshow("face detector", frame);
+            if(waitKey(30) >= 0) break;
         }
-
-        imshow("face detector", frame);
-        if(waitKey(30) >= 0) break;
-    }
-    offLed();
+    
     return 0;
 }
